@@ -14,8 +14,10 @@ async function startGame() {
 startGame();
 
 async function continueGame(code){
+    console.log(code);
     Array.from(document.querySelectorAll('.choice-box')).forEach(node=>container.removeChild(node));
     const snippet = await getByCode(code);
+    console.log(snippet)
     storyTime(snippet, code);
 }
 
