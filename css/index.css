@@ -3,3 +3,20 @@ body{
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+.choice-box{
+	border: 1px solid white;
+	display: flex;
+	flex-direction: column;
+}
+
+.choice-main{
+	padding: 4px;
+	font-size: 25px;
+}
+
+.choice-sub{
+	padding: 4px;
+	font-size: 20px;
+	color: darkgray;
+}

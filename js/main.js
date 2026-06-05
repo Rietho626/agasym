@@ -6,13 +6,14 @@ async function getByCode(code){
 
 async function startGame() {
     const snippet = await getByCode(0);
-    storyTime(snippet.text);
+    storyTime(snippet);
 }
 
 startGame();
 
 const container = document.getElementById('test');
-async function storyTime(story){
+async function storyTime(snippet){
+    const story = snippet.text;
     let told = "";
     for(let i = 0; i < story.length; i++){      
         told += story[i];
@@ -23,6 +24,20 @@ async function storyTime(story){
         }else{
             await delay(50)
         }
+    }
+    snippet.choices.forEach(choice=>{
+        appendChoices(container, choice);
+    })
+}
+
+function appendChoices(parent, choice){
+    if(!choice.code.includes('H')){
+        const choiceBox = document.createElement('div').classList.add('choice-box');
+        const choiceMain = document.createElement('div').classList.add('choice-main').textContent = choice.main;
+        const choiceSub = document.createElement('div').classList.add('choice-sub').textContent = choice.sub;
+        choiceBox.appendChild(choiceMain);
+        choiceBox.appendChild(choiceSub);
+        parent.appendChild(choiceBox);
     }
 }
 
