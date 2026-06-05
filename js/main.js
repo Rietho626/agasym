@@ -1,10 +1,14 @@
 
 async function getByCode(code){
-    const snippet = await fetch('https://rietho626.pythonanywhere.com/0').then(res=>res.json()).then(data=>data);
-    console.log(snippet);
+    return await fetch('https://rietho626.pythonanywhere.com/0').then(res=>res.json()).then(data=>data);
+    
 }
 
-getByCode(0);
+async function startGame() {
+    const snippet = await getByCode(0);
+    storyTime(snippet.text);
+}
+
 const container = document.getElementById('test');
 async function storyTime(story){
     let told = "";
