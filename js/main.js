@@ -1,5 +1,6 @@
+fetch('https://rietho626/pythonanywhere.com').then(res=>res.json()).then(data=>console.log(data.msg));
+
 const container = document.getElementById('test');
-console.log(container)
 const stringo = "Geäst und trockenes Laub knirschen zu deinen Füßen. Deine Schritte, schwerfällig, ziellos. Tiefer und tiefer ins nächtliche Halbdunkel des Waldes, führen sie dich. Vorbei an tagsüber majestätischen Eichen, gespenstisch im fahlen Licht des Mondes. Ohne zu wissen weshalb, wandelst du voran. Es scheint nicht von Bedeutung zu sein.";
 async function storyTime(story){
     let told = "";
@@ -22,3 +23,4 @@ function delay(time){
         setTimeout(resolve, time);
     })
 }
+
