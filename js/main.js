@@ -32,9 +32,12 @@ async function storyTime(snippet){
 
 function appendChoices(parent, choice){
     if(!choice.code.includes('H')){
-        const choiceBox = document.createElement('div').classList.add('choice-box');
-        const choiceMain = document.createElement('div').classList.add('choice-main');
-        const choiceSub = document.createElement('div').classList.add('choice-sub');
+        const choiceBox = document.createElement('div');
+        choiceBox.classList.add('choice-box');
+        const choiceMain = document.createElement('div');
+        choiceMain.classList.add('choice-main');
+        const choiceSub = document.createElement('div');
+        choiceSub.classList.add('choice-sub');
         choiceMain.textContent = choice.main;
         choiceSub.textContent = choice.sub;
 
