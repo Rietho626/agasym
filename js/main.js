@@ -50,6 +50,7 @@ function appendChoices(parent, choice, code){
         choiceSub.classList.add('choice-sub');
         choiceMain.textContent = choice.main;
         choiceSub.textContent = choice.sub;
+        console.log(choice.code)
 
         choiceBox.addEventListener("click", ()=>{
             continueGame(code, choice.code);
