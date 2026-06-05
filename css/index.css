@@ -2,12 +2,19 @@ body{
     background-color: black;
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 22px;
 }
 
 .choice-box{
 	border: 1px solid white;
 	display: flex;
 	flex-direction: column;
+	margin: 8px;
+}
+
+.choice-box:hover{
+	box-shadow: 0px 0px 4px 1.5px white;
+	cursor: pointer;
 }
 
 .choice-main{
@@ -20,3 +27,4 @@ body{
 	font-size: 20px;
 	color: darkgray;
 }
+
