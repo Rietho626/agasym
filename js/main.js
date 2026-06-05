@@ -62,7 +62,8 @@ function appendChoices(parent, choice, code){
 }
 
 function choiceBoxListener(fullCode, choiceCode){
-    continueGame(String(fullCode)+String(choiceCode));
+    const code = String(fullCode)+String(choiceCode);
+    continueGame(code);
 }
 
 
