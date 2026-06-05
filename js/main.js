@@ -9,6 +9,8 @@ async function startGame() {
     storyTime(snippet.text);
 }
 
+startGame();
+
 const container = document.getElementById('test');
 async function storyTime(story){
     let told = "";
