@@ -1,13 +1,13 @@
 
 async function getByCode(code){
-    return await fetch('https://rietho626.pythonanywhere.com/0').then(res=>res.json()).then(data=>data);
+    return await fetch(`https://rietho626.pythonanywhere.com/${code}`).then(res=>res.json()).then(data=>data);
     
 
 }
 const container = document.getElementById('test');
 
 async function startGame() {
-    const snippet = await getByCode(0);
+    const snippet = await getByCode("0");
     storyTime(snippet, "");
 }
 
