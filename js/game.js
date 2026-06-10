@@ -10,7 +10,7 @@ async function startGame() {
     storyTime(snippet, "");
 }
 
-//startGame();
+startGame();
 
 async function continueGame(code){
     console.log(code);
