@@ -1,11 +1,15 @@
 const loginButton = document.getElementById('login-button');
 const registerButton = document.getElementById('register-button');
-const returnButton = document.getElementById('returnButton-button');
+const returnButton = document.getElementById('return-button');
 const unameInput = document.getElementById('uname');
 const pwdInput = document.getElementById('pwd');
 
-loginButton.addEventListener('click', ()=>{
-    refer('subsites/login.html');
+function refer(page){
+    window.location.href=`/agasym/${page}`;
+}
+
+registerButton.addEventListener('click', ()=>{
+    refer('subsites/register.html');
 })
 
 returnButton.addEventListener('click', ()=>{
