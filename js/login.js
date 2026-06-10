@@ -17,13 +17,13 @@ returnButton.addEventListener('click', ()=>{
 })
 
 loginButton.addEventListener('click', ()=>{
-    console.log(testApi(unameInput.value, pwdInput.value));
+    console.log(login(unameInput.value, pwdInput.value));
 })
 
-async function testApi(uname, pwd){
+async function login(uname, pwd){
     const test = {uname: uname, pwd: pwd};
 
-    return await fetch(`https://rietho626.pythonanywhere.com/api/check-uname`,
+    const response = await fetch(`https://rietho626.pythonanywhere.com/api/check-uname`,
         {
             method: 'POST',
             headers: {
@@ -33,5 +33,25 @@ async function testApi(uname, pwd){
         }
     ).then(res=>res.json()).then(data=>data);
     
+    if(response.exists){
+        const cred = await fetch(`https://rietho626.pythonanywhere.com/api/check-pwd`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(test)
+            }
+        ).then(res=>res.json()).then(data=>data);
+
+        if(cred.matching){
+            //set cookie
+            refer('subsites/game.html');
+        }else{
+            return "Password not matching";
+        }
+    }else{
+        return "Username does not exist";
+    }
 }
 
