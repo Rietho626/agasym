@@ -5,7 +5,14 @@ const unameInput = document.getElementById('uname');
 const pwdInput = document.getElementById('pwd');
 
 loginButton.addEventListener('click', ()=>{
-    console.log(unameInput.value, pwdInput.value)
+    refer('subsites/login.html');
+})
+
+returnButton.addEventListener('click', ()=>{
+    refer('');
+})
+
+loginButton.addEventListener('click', ()=>{
     console.log(testApi(unameInput.value, pwdInput.value));
 })
 
