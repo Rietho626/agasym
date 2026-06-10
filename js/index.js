@@ -4,5 +4,5 @@ login.addEventListener('click', ()=>{
 })
 
 function refer(page){
-    window.location.href(`/subsites/${page}`);
+    window.location.href=`/subsites/${page}`;
 }
