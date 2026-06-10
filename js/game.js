@@ -74,19 +74,3 @@ function delay(time){
 
 
 
-async function testApi(uname, pwd){
-    const tesuto = {uname: "schnitzel", pwd: "schnitzel_pwd"};
-
-    return await fetch(`https://rietho626.pythonanywhere.com/api`,
-        {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify(tesuto)
-        }
-    ).then(res=>res.json()).then(data=>data);
-    
-}
-
-console.log(testApi(1,2));
