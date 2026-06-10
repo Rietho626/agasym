@@ -29,7 +29,7 @@ registerButton.addEventListener('click', ()=>{
 async function register(uname, pwd){
     const udata = {uname: uname, pwd: pwd};
 
-    await fetch(`https://rietho626.pythonanywhere.com/api/check-uname`,
+    const response = await fetch(`https://rietho626.pythonanywhere.com/api/check-uname`,
         {
             method: 'POST',
             headers: {
@@ -39,7 +39,7 @@ async function register(uname, pwd){
         }
     ).then(res=>res.json()).then(data=>data);
     
-    if(data.exists){
+    if(response.exists){
         console.log("Dieser Benutzername ist bereits vergeben.")
     }else{
          return await fetch(`https://rietho626.pythonanywhere.com/api/register`,
