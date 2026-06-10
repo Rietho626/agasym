@@ -4,5 +4,5 @@ login.addEventListener('click', ()=>{
 })
 
 function refer(page){
-    window.location.href=`/agaysm/subsites/${page}`;
+    window.location.href=`/agasym/subsites/${page}`;
 }
