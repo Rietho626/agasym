@@ -15,6 +15,10 @@ const wrapper = document.getElementById("wrapper");
 if(!characters.response){
     wrapper.innerHTML = "You are not logged in, you fool.";
 }else{
+
+    function refer(page){
+        window.location.href=`/agasym/${page}`;
+    }
     const uname = localStorage.getItem("uname");
     const greeting = document.getElementById("greeting");
     const characterBoxes = document.getElementById("characters");
@@ -24,7 +28,7 @@ if(!characters.response){
     const logout = document.getElementById("logout-button");
     const erfolge = document.getElementById("erfolge-button");
 
-    greeting.textContent = `Seien Sie gegrüßt, ${uname}`;
+    greeting.textContent = `Sei gegrüßt, ${uname}`;
 
     if(characters.chars.length){
         characters.chars.forEach(char=>{
@@ -41,6 +45,14 @@ if(!characters.response){
     }else{
         characterBoxes.textContent = 'Wähle "beginne eine neue Reise", um aufzubrechen';
     }
+
+    createNew.addEventListener("click", ()=>{
+        if(characters.chars.length < 5){
+            refer("subsites/create.html");
+        }else{
+            window.alert("Du darfst maximal 5 Geschichten auf einmal erleben");
+        }
+    })
 
 
 }

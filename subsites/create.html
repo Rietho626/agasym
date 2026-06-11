@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Agasym</title>
+        <link rel="stylesheet" href="./../css/create.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>
+                Wer bist du
+            </h1>
+            <div id="form-wrapper">
+                <form method="post">
+                    <fieldset>
+                        <input name="name" type="text" placeholder="Dein Name..." required>
+                        <select name="hair" required>
+                            <option  value="" selected>
+                                Haarfarbe
+                            </option>
+                            <option value="blonde">
+                                Blond
+                            </option>
+                            <option value="brunette">
+                                Brünett
+                            </option>
+                            <option value="black">
+                                Schwarz
+                            </option>
+                            <option value="gray">
+                                Grau
+                            </option>
+                            <option value="white">
+                                Weiß
+                            </option>
+                            <option value="none">
+                                Glatze
+                            </option>
+                        </select>
+                        <select name="eyes" required>
+                            <option  value="" selected>
+                                Augenfarbe
+                            </option>
+                            <option value="blue">
+                                Blau
+                            </option>
+                            <option value="green">
+                                Grün
+                            </option>
+                            <option value="black">
+                                Schwarz
+                            </option>
+                            <option value="gray">
+                                Grau
+                            </option>
+                            <option value="brown">
+                                Braun
+                            </option>
+                            <option value="red">
+                                Rot
+                            </option>
+                        </select>
+                          </select>
+                        <select name="gender" required>
+                            <option  value="" selected>
+                                Geschlecht
+                            </option>
+                            <option value="male">
+                                Männlich
+                            </option>
+                            <option value="female">
+                                Weiblich
+                            </option>
+                            <option value="different">
+                                Etwas Anderes...
+                            </option>
+                            </option>
+                        </select>
+                    </fieldset>
+                </form>
+            </div>
+            <div id="footer">
+                <div id="logout-button">
+                    Ausloggen
+                </div>
+                <div id="erfolge-button">
+                    Erfolge
+                </div>
+            </div>
+        </div>
+    <script type="module" src="./../js/create.js"></script>
+    </body>
+    
+</html>
