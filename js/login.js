@@ -37,6 +37,7 @@ async function login(uname, pwd){
         const cred = await fetch(`https://rietho626.pythonanywhere.com/api/check-pwd`,
             {
                 method: 'POST',
+                credentials: 'include',
                 headers: {
                     'Content-type': 'application/json'
                 },
