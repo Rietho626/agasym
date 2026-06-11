@@ -10,10 +10,10 @@
                 Wer bist du
             </h1>
             <div id="form-wrapper">
-                <form method="post">
+                <form method="post" id="create-char">
                     <fieldset>
-                        <input name="name" type="text" placeholder="Dein Name..." required>
-                        <select name="hair" required>
+                        <input name="name" id="charName" type="text" placeholder="Dein Name..." required>
+                        <select name="hair" id="hair" required>
                             <option  value="" selected>
                                 Haarfarbe
                             </option>
@@ -36,7 +36,7 @@
                                 Glatze
                             </option>
                         </select>
-                        <select name="eyes" required>
+                        <select name="eyes" id="eyes" required>
                             <option  value="" selected>
                                 Augenfarbe
                             </option>
@@ -60,7 +60,7 @@
                             </option>
                         </select>
                           </select>
-                        <select name="gender" required>
+                        <select name="gender" id="gender" required>
                             <option  value="" selected>
                                 Geschlecht
                             </option>
@@ -73,8 +73,8 @@
                             <option value="different">
                                 Etwas Anderes...
                             </option>
-                            </option>
                         </select>
+                        <input type="submit" value="Beginnen">
                     </fieldset>
                 </form>
             </div>

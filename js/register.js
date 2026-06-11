@@ -37,7 +37,7 @@ async function register(uname, pwd){
             },
             body: JSON.stringify(udata)
         }
-    ).then(res=>res.json()).then(data=>data);
+    ).then(res=>res.json());
     
     if(response.exists){
         console.log("Dieser Benutzername ist bereits vergeben.")
@@ -50,7 +50,7 @@ async function register(uname, pwd){
                 },
                 body: JSON.stringify(udata)
             }
-        ).then(res=>res.json()).then(ma=>ma);
+        ).then(res=>res.json());
     }
 }
 
