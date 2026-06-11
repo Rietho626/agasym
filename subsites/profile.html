@@ -6,25 +6,34 @@
     </head>
     <body>
         <div id="wrapper">
-            <h1>
+            <h1 id="greeting">
                 
             </h1>
-            <div id="option-wrapper">
-                <div class="button" id="login">
-                    Enter the Agasym (login)
+            <div id="character-menu-wrapper">
+                <div id="characters">
+
                 </div>
-                <div class="button" id="register">
-                    Join the Agasym (register)
-                </div>
-                <div class="button" id="credits">
-                    Creators of the agasym (credits)
+                <div id="character-options">
+                    <div class="button" id="create-new-character">
+                        Beginne eine neue Reise
+                    </div>
+                    <div class="button" id="delete-character">
+                        Beende eine vergangene Reise
+                    </div>
+                    <div id="char-info">
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="footer">
+            <div id="logout-button">
+                Ausloggen
+            </div>
+            <div id="erfolge-button">
+                Erfolge
+            </div>
+        </div>
     <script type="module" src="./../js/profile.js"></script>
-    <script>
-        const username = localStorage.getItem("uname");
-    </script>
     </body>
     
 </html>
