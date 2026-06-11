@@ -39,7 +39,7 @@ if(!characters.response){
             characterBoxes.appendChild(charBox);
         })
     }else{
-        characters.textContent = 'Wähle "beginne eine neue Reise", um aufzubrechen';
+        characterBoxes.textContent = 'Wähle "beginne eine neue Reise", um aufzubrechen';
     }
 
 
