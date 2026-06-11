@@ -45,8 +45,8 @@ async function login(uname, pwd){
         ).then(res=>res.json()).then(data=>data);
 
         if(cred.matching){
-            //set cookie
-            refer('subsites/game.html');
+            localStorage.setItem("uname", cred.uname);
+            refer('subsites/profile.html');
         }else{
             return "Password not matching";
         }
