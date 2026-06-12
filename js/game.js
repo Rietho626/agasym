@@ -27,7 +27,7 @@ async function updateCharacter(code){
     ).then(res=>res.json());
 }
 
-const container = document.getElementById('story_container');
+const container = document.getElementById('story-container');
 
 async function startGame() {
     const char = await getCharacter();
