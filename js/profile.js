@@ -59,16 +59,11 @@ if(!characters.response){
         characterBoxes.textContent = 'Wähle "beginne eine neue Reise", um aufzubrechen';
     }
 
-    createNew.addEventListener("click", ()=>{
-        if(characters.chars.length < 5){
-            refer("subsites/create.html");
-        }else{
-            window.alert("Du darfst maximal 5 Geschichten auf einmal erleben");
+    async function deleteRequest(){
+        if(!selected){
+            window.alert("Wähle eine Reise, um sie zu beenden."); 
+            return;
         }
-    })
-
-    deleteChar.addEventListener("click", ()=>{
-        if(!selected) window.alert("Wähle eine Reise, um sie zu beenden."); return
         await fetch(`https://rietho626.pythonanywhere.com/api/delete-char`,
             {
                 method: 'POST',
@@ -79,7 +74,17 @@ if(!characters.response){
                 body: JSON.stringify({char_id: selected})
             }
         ).then(res=>res.json());
+    }
+
+    createNew.addEventListener("click", ()=>{
+        if(characters.chars.length < 5){
+            refer("subsites/create.html");
+        }else{
+            window.alert("Du darfst maximal 5 Geschichten auf einmal erleben");
+        }
     })
+
+    deleteChar.addEventListener("click", deleteRequest)
 
 
 }
