@@ -38,28 +38,7 @@ if(!characters.response){
 
     greeting.textContent = `Sei gegrüßt, ${uname}`;
 
-
-
-    if(characters.chars.length){
-        characters.chars.forEach(char=>{
-            const charBox = document.createElement("div");
-            charBox.classList.add("char-box");
-            const charName = document.createElement("div");
-            charName.textContent = char["char_name"];
-            const charScene = document.createElement("div");
-            charScene.textContent = "Page: " + char["story_code"];
-            charBox.appendChild(charName);
-            charBox.appendChild(charScene);
-            charBox.addEventListener("click",()=>{
-                selectedListener(charBox, char["char_id"]);
-            })
-            characterBoxes.appendChild(charBox);
-        })
-    }else{
-        characterBoxes.textContent = 'Wähle "beginne eine neue Reise", um aufzubrechen';
-    }
-
-    async function deleteRequest(){
+        async function deleteRequest(){
         if(!selected){
             window.alert("Wähle eine Reise, um sie zu beenden."); 
             return;
@@ -85,6 +64,27 @@ if(!characters.response){
     })
 
     deleteChar.addEventListener("click", deleteRequest)
+
+    if(characters.chars.length){
+        characters.chars.forEach(char=>{
+            const charBox = document.createElement("div");
+            charBox.classList.add("char-box");
+            const charName = document.createElement("div");
+            charName.textContent = char["char_name"];
+            const charScene = document.createElement("div");
+            charScene.textContent = "Page: " + char["story_code"];
+            charBox.appendChild(charName);
+            charBox.appendChild(charScene);
+            charBox.addEventListener("click",()=>{
+                selectedListener(charBox, char["char_id"]);
+            })
+            characterBoxes.appendChild(charBox);
+        })
+    }else{
+        characterBoxes.textContent = 'Wähle "beginne eine neue Reise", um aufzubrechen';
+    }
+
+
 
 
 }
