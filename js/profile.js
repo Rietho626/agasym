@@ -81,7 +81,10 @@ if(!characters.response){
             characterBoxes.appendChild(charBox);
         })
     }else{
-        characterBoxes.textContent = 'Wähle "beginne eine neue Reise", um aufzubrechen';
+        const noCharacters = document.createElement("div");
+        noCharacters.setAttribute("id", "no-characters");
+        noCharacters.textContent = 'Wähle "beginne eine neue Reise", um aufzubrechen';
+        characterBoxes.appendChild(noCharacters);
     }
 
 
