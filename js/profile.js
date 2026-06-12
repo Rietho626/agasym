@@ -12,7 +12,7 @@ const characters = await fetch(`https://rietho626.pythonanywhere.com/api/login-c
 console.log(characters);
 const wrapper = document.getElementById("wrapper");
 
-let selected = null;
+let selected = {};
 
 if(!characters.response){
     wrapper.innerHTML = "You are not logged in, you fool.";
@@ -24,7 +24,7 @@ if(!characters.response){
 
 
     function selectedListener(charBox, charid){
-       selected =  selected.id === charid ? null : {box: charBox, id: charid};
+       selected =  selected.id === charid ? {} : {box: charBox, id: charid};
        charBox.classList.toggle('selected');
     }
     const uname = localStorage.getItem("uname");
@@ -54,7 +54,7 @@ if(!characters.response){
             }
         );
         document.removeChild(selected.box);
-        selected = null;
+        selected = {};
     }
 
     createNew.addEventListener("click", ()=>{
