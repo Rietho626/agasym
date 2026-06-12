@@ -2,8 +2,16 @@
 import getStory from "./../story/story.js";
 
 async function getCharacter(){
-    return await fetch(`https://rietho626.pythonanywhere.com/api/get-char`).then(res=>res.json());
-    
+    return await fetch(`https://rietho626.pythonanywhere.com/api/get-char`,
+        {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify({})
+            }
+    ).then(res=>res.json());
 }
 const container = document.getElementById('test');
 
