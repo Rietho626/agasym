@@ -2,14 +2,13 @@ export default getStory;
 
 function getStory(char){
     const storyObj = story[char[0].story_code];
-    const keys = {
-        "{hairColor}": char.hair,
-        "{eyeColor}": char.eyes,
-        "{gender}": char.gender,
-        "{name}": char.name
-    }
-        console.log(char);
-        console.log(keys);
+    const setKeys = () =>{
+        return {"{hairColor}": char.hair,
+                "{eyeColor}": char.eyes,
+                "{gender}": char.gender,
+                "{name}": char.name}
+    };
+    const keys = setKeys();
     storyObj.replace.forEach(obj=>{
         if(obj.key !== "{name}"){
             storyObj.text = storyObj.text.replace(obj.repkey, obj[keys[obj.key]])
