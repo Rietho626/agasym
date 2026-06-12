@@ -28,6 +28,7 @@ async function submitListener(e){
             headers: {
                 'Content-type': 'application/json'
             },
+            credentials: 'include',
             body: JSON.stringify(data)
         }
     ).then(res=>res.json());
