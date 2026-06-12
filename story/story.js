@@ -3,10 +3,10 @@ export default getStory;
 function getStory(char){
     const storyObj = story[char[0].story_code];
     const setKeys = () =>{
-        return {"{hairColor}": char.hair,
-                "{eyeColor}": char.eyes,
-                "{gender}": char.gender,
-                "{name}": char.name}
+        return {"{hairColor}": char[0].hair,
+                "{eyeColor}": char[0].eye_color,
+                "{gender}": char[0].gender,
+                "{name}": char[0].name}
     };
     const keys = setKeys();
     storyObj.replace.forEach(obj=>{
