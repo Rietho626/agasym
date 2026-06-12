@@ -24,6 +24,9 @@ if(!characters.response){
 
 
     function selectedListener(charBox, charid){
+        if(selected.box){
+            selected.box.classList.remove("selected");
+        }
        selected =  selected.id === charid ? {} : {box: charBox, id: charid};
        charBox.classList.toggle('selected');
     }
@@ -53,7 +56,7 @@ if(!characters.response){
                 body: JSON.stringify({char_id: selected.id})
             }
         );
-        document.removeChild(selected.box);
+        characterBoxes.removeChild(selected.box);
         selected = {};
     }
 
