@@ -24,7 +24,7 @@ if(!characters.response){
 
 
     function selectedListener(charBox, charid){
-       selected =  selected === charid ? null : charid;
+       selected =  selected.id === charid ? null : {box: charBox, id: charid};
        charBox.classList.toggle('selected');
     }
     const uname = localStorage.getItem("uname");
@@ -38,8 +38,8 @@ if(!characters.response){
 
     greeting.textContent = `Sei gegrüßt, ${uname}`;
 
-        async function deleteRequest(){
-        if(!selected){
+    async function deleteRequest(){
+        if(!selected.id){
             window.alert("Wähle eine Reise, um sie zu beenden."); 
             return;
         }
@@ -50,9 +50,11 @@ if(!characters.response){
                 headers: {
                     'Content-type': 'application/json'
                 },
-                body: JSON.stringify({char_id: selected})
+                body: JSON.stringify({char_id: selected.id})
             }
-        ).then(res=>res.json());
+        );
+        document.removeChild(selected.box);
+        selected = null;
     }
 
     createNew.addEventListener("click", ()=>{

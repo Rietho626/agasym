@@ -71,5 +71,6 @@ fieldset{
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    gap: 10px;
 }
 

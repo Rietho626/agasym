@@ -1,13 +1,15 @@
 
-async function getByCode(code){
-    return await fetch(`https://rietho626.pythonanywhere.com/${code}`).then(res=>res.json()).then(data=>data);
+import getStory from "./../story/story.js";
+
+async function getCharacter(){
+    return await fetch(`https://rietho626.pythonanywhere.com/get-char`).then(res=>res.json());
     
 }
 const container = document.getElementById('test');
 
 async function startGame() {
-    const snippet = await getByCode("0");
-    storyTime(snippet, "");
+    const char = await getCharacter();
+    storyTime(getStory(char), "");
 }
 
 startGame();
@@ -25,11 +27,14 @@ async function storyTime(snippet, code){
     const story = snippet.text;
     let told = "";
     for(let i = 0; i < story.length; i++){      
-        told += story[i];
+        if(story[i] !== "|")told += story[i];
         container.innerHTML = told;
         if(story[i] === "."){
             told += "<br><br>"
             await delay(550);
+        }else if(story[i] === "|"){
+            told += "<br><br><br>";
+            await delay(700);
         }else{
             await delay(50)
         }

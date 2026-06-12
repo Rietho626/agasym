@@ -1,4 +1,6 @@
-console.log("I am here!")
+ function refer(page){
+    window.location.href=`/agasym/${page}`;
+}
 
 const form = document.getElementById("create-char");
 const hair = document.getElementById("hair");
@@ -31,7 +33,6 @@ async function submitListener(e){
             credentials: 'include',
             body: JSON.stringify(data)
         }
-    ).then(res=>res.json());
-    console.log(response);
-
+    );
+    refer("subsites/game.html");
 }
