@@ -1,3 +1,5 @@
+console.log("I am here!")
+
 const form = document.getElementById("create-char");
 const hair = document.getElementById("hair");
 const eyes = document.getElementById("eyes");
@@ -7,6 +9,7 @@ const charName = document.getElementById("charName");
 form.addEventListener("submit", submitListener);
 
 async function submitListener(e){
+    console.log("submitted!")
     e.preventDefault();
     const genderValue = gender.value;
     const eyesValue = eyes.value;
