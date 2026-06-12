@@ -1,8 +1,7 @@
 export default getStory;
 
 function getStory(char){
-    console.log(char)
-    const storyObj = story[char.story_code];
+    const storyObj = story[char[0].story_code];
     const keys = {
         "{hairColor}": char.hair,
         "{eyeColor}": char.eyes,
