@@ -31,5 +31,6 @@ async function submitListener(e){
             body: JSON.stringify(data)
         }
     ).then(res=>res.json());
+    console.log(response);
 
 }
