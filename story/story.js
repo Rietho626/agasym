@@ -4,7 +4,7 @@ function getStory(char){
     const storyObj = story[char[0].story_code];
     const setKeys = () =>{
         return {"{hairColor}": char[0].hair,
-                "{eyeColor}": char[0].eye_color,
+                "{eyeColor}": char[0]["eye_color"],
                 "{gender}": char[0].gender,
                 "{name}": char[0].name}
     };
@@ -25,11 +25,11 @@ const story = {
             {   
                 repkey: "{hairColor1}",
                 key: "{hairColor}",
-                "white": "fährt durch dein weißes",
-                "black": "fährt durch dein schwarzes",
-                "gray": "fährt durch dein graues",
-                "brown": "fährt durch dein braunes",
-                "blonde": "fährt durch dein weißes",
+                "white": "fährt durch dein weißes Haar",
+                "black": "fährt durch dein schwarzes Haar",
+                "gray": "fährt durch dein graues Haar",
+                "brown": "fährt durch dein braunes Haar",
+                "blonde": "fährt durch dein weißes Haar",
                 "none": "streicht über deine Kophaut"
             },
             {
