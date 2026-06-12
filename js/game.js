@@ -27,11 +27,11 @@ async function updateCharacter(code){
     ).then(res=>res.json());
 }
 
-const container = document.getElementById('test');
+const container = document.getElementById('story_container');
 
 async function startGame() {
     const char = await getCharacter();
-    storyTime(getStory(char), "");
+    storyTime2(getStory(char), "");
 }
 
 startGame();
@@ -39,7 +39,7 @@ startGame();
 async function continueGame(code){
     const newChar = await updateCharacter(code);
     Array.from(document.querySelectorAll('.choice-box')).forEach(node=>container.removeChild(node));
-    storyTime(getStory(newChar), code);
+    storyTime2(getStory(newChar), code);
 }
 
 
@@ -60,6 +60,28 @@ async function storyTime(snippet, code){
         }
     }
     snippet.choices.forEach(choice=>{
+        appendChoices(container, choice, code);
+    })
+}
+
+async function storyTime2(snippet, code){
+    const story = snippet.text;
+    for(let i = 0; i < story.length; i++){
+        container.innerHTML += story[i] !== "|" ? `<span class='black'>${story[i]}</span>` : "";
+        if(story[i] === "."){
+            container.innerHTML += "<br><br>";
+        }else if(story[i] === "|"){
+            told += "<br><br><br>";
+        }
+    }
+
+    const spans = document.querySelectorAll(".black");
+    Array.from(spans).forEach(el=>{
+        await delay(50);
+        el.classList.remove("black");
+    })
+
+     snippet.choices.forEach(choice=>{
         appendChoices(container, choice, code);
     })
 }

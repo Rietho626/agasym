@@ -54,6 +54,7 @@ const story = {
             }
             
         ],
+        
         "choices": [
             {   "code": "1A",
                 "main": "Im Wald umsehen",
