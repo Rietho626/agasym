@@ -13,6 +13,20 @@ async function getCharacter(){
             }
     ).then(res=>res.json());
 }
+
+async function updateCharacter(code){
+    return await fetch(`https://rietho626.pythonanywhere.com/api/update-char`,
+        {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify({code: code})
+            }
+    ).then(res=>res.json());
+}
+
 const container = document.getElementById('test');
 
 async function startGame() {
@@ -23,11 +37,9 @@ async function startGame() {
 startGame();
 
 async function continueGame(code){
-    console.log(code);
+    const newChar = await updateCharacter(code);
     Array.from(document.querySelectorAll('.choice-box')).forEach(node=>container.removeChild(node));
-    const snippet = await getByCode(code);
-    console.log(snippet)
-    storyTime(snippet, code);
+    storyTime(getStory(newChar), code);
 }
 
 
