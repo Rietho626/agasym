@@ -10,9 +10,9 @@ function getStory(char){
     }
     storyObj.replace.forEach(obj=>{
         if(obj.key !== "{name}"){
-            storyObj.text.replace(obj.repkey, obj[keys[obj.key]])
+            storyObj.text = storyObj.text.replace(obj.repkey, obj[keys[obj.key]])
         }
-            storyObj.text.replace(obj.repkey, keys[obj.key])
+            storyObj.text = storyObj.text.replace(obj.repkey, keys[obj.key])
     })
 
     return storyObj;
