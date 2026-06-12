@@ -9,7 +9,7 @@ const characters = await fetch(`https://rietho626.pythonanywhere.com/api/login-c
             }
         ).then(res=>res.json());
 
-
+console.log(characters);
 const wrapper = document.getElementById("wrapper");
 
 if(!characters.response){
