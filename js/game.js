@@ -76,7 +76,7 @@ async function storyTime2(snippet, code){
     }
 
     const spans = document.querySelectorAll(".black");
-    Array.from(spans).forEach(el=>{
+    Array.from(spans).forEach(async el=>{
         await delay(50);
         el.classList.remove("black");
     })
