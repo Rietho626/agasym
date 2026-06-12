@@ -12,12 +12,20 @@ const characters = await fetch(`https://rietho626.pythonanywhere.com/api/login-c
 console.log(characters);
 const wrapper = document.getElementById("wrapper");
 
+let selected = null;
+
 if(!characters.response){
     wrapper.innerHTML = "You are not logged in, you fool.";
 }else{
 
     function refer(page){
         window.location.href=`/agasym/${page}`;
+    }
+
+
+    function selectedListener(charBox, charid){
+       selected =  selected === charid ? null : charid;
+       charBox.classList.toggle('selected');
     }
     const uname = localStorage.getItem("uname");
     const greeting = document.getElementById("greeting");
@@ -30,6 +38,8 @@ if(!characters.response){
 
     greeting.textContent = `Sei gegrüßt, ${uname}`;
 
+
+
     if(characters.chars.length){
         characters.chars.forEach(char=>{
             const charBox = document.createElement("div");
@@ -37,9 +47,12 @@ if(!characters.response){
             const charName = document.createElement("div");
             charName.textContent = char["char_name"];
             const charScene = document.createElement("div");
-            charScene.textContent = char["story_code"];
+            charScene.textContent = "Page: " + char["story_code"];
             charBox.appendChild(charName);
             charBox.appendChild(charScene);
+            charBox.addEventListener("click",()=>{
+                selectedListener(charBox, char["char_id"]);
+            })
             characterBoxes.appendChild(charBox);
         })
     }else{
@@ -52,6 +65,20 @@ if(!characters.response){
         }else{
             window.alert("Du darfst maximal 5 Geschichten auf einmal erleben");
         }
+    })
+
+    deleteChar.addEventListener("click", ()=>{
+        if(!selected) window.alert("Wähle eine Reise, um sie zu beenden."); return
+        await fetch(`https://rietho626.pythonanywhere.com/api/delete-char`,
+            {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify({char_id: selected})
+            }
+        ).then(res=>res.json());
     })
 
 
