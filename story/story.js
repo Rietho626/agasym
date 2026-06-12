@@ -8,6 +8,8 @@ function getStory(char){
         "{gender}": char.gender,
         "{name}": char.name
     }
+        console.log(char);
+        console.log(keys);
     storyObj.replace.forEach(obj=>{
         if(obj.key !== "{name}"){
             storyObj.text = storyObj.text.replace(obj.repkey, obj[keys[obj.key]])
@@ -67,10 +69,12 @@ const story = {
     },
     "1A":{
         "text": "Du findest eine Fackel",
-        "choices": []
+        "choices": [],
+        "replace": []
     },
     "1B":{
         "text": "Du entschließt dich dazu, das umliegende Terrain auszukundschaften. Das Knirschen und Knacken deiner Schritte erfüllt den dunklen Wald aufs Neue als du dich einer hochgewachsenen Eiche näherst. Deine Hand ruht auf ihrer Rinde. Rau und uneben. Dein Blick wandert am Stamm empor, den du in Kürze erklimmen wirst. Für einen Moment stehst du reglos, die Nachtluft atmend da. Dann beginnst du den Aufstieg. Trotz der Erschöpfung winden sich deine Glieder behände um den massiven Stamm.  Du verlagerst dein Gewicht, greifst um und kletterst.|Umfangen vom lauen Spätsommerwind ragt dein Oberkörper über das Blätterdach, ein endloses Meer von Baumkronen zu deinen Füßen. Der Mond, eine Iris aus fahlem Licht, blickt aus der ewigen Schwärze des Nachthimmels auf deine einsame Figur herab. Dein Fokus richtet sich gen Norden – unweit von hier erheben sich Gebirgsausläufer wie Wellen aus der grünen See. Ein geeigneter Ort, um nach Höhlen und Felsvorsprüngen Ausschau zu halten, die als Schutz vor der drohenden Finsternis dienen könnten. Das wird genügen müssen. Zum Abstieg bereit wendest du dich ab, da erblickst du etwas im Mondlicht über das Blätterdach aufsteigen. Graue Schwaden – Rauch. Im Nordwesten hatte jemand ein Feuer entfacht. Eine überaus kühne Tat, geboren von grenzenloser Selbstsicherheit, oder Naivität, denn sowie die Flammen Schutz vor den Schrecken der vollkommenen Dunkelheit bieten, so erweisen sie sich, solange der Mond die Nacht noch erhellt, lediglich als Köder unangenehmer Gesellschaft. Wobei diese zumindest mit sich reden lässt, wenn auch meist ausschließlich darüber, wie viele Silberstücke einem das eigene Leben wert ist. ",
-        "choices": []
+        "choices": [],
+        "replace": []
     }
 }
