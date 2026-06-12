@@ -75,11 +75,11 @@ async function storyTime2(snippet, code){
         }
     }
 
-    const spans = document.querySelectorAll(".black");
-    Array.from(spans).forEach(async el=>{
+    const spans = Array.from(document.querySelectorAll(".black"));
+    for(let i = 0; i < spans.length; i++){
         await delay(50);
-        el.classList.remove("black");
-    })
+        spans[i].classList.remove("black")
+    }
 
      snippet.choices.forEach(choice=>{
         appendChoices(container, choice, code);
