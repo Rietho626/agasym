@@ -86,3 +86,12 @@ input[type=text]{
     padding: 20px;
     text-align: center;
 }
+
+#footer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#footer div{
+    text-align: center;
+}
