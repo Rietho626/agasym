@@ -71,7 +71,7 @@ async function storyTime2(snippet, code){
         if(story[i] === "."){
             container.innerHTML += "<br><br>";
         }else if(story[i] === "|"){
-            told += "<br><br><br>";
+            container.innerHTML += "<br><br><br>";
         }
     }
 
